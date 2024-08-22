@@ -103,6 +103,20 @@ body {
     color: #7328ff; /* Radiant pink text on hover */
 }
 
+.card-img-frame {
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position context for absolute children */
+}
+
+.card-img-top {
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.card-img-top:hover {
+    transform: scale(1.2); /* Zoom in by 20% */
+}
+
+
 /* Other Buttons with Transparent Background and Radiant Gradient Frame */
 .portfolio-section .btn-primary,
 .contact-section .btn-primary {
