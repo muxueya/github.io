@@ -1,5 +1,5 @@
 // Custom JavaScript
-const numStars = 100; // Number of stars
+const numStars = 150; // Number of stars
 const starfield = document.getElementById('starfield');
 
 for (let i = 0; i < numStars; i++) {
