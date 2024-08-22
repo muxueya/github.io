@@ -7,7 +7,32 @@ body {
 
 /* Logo Style */
 .navbar-brand .logo {
-    height: 40px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #000; /* Default text color */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    background-color: #e0b3ff; /* Light purple on hover */
+}
+
+/* Active link effect (when clicked) */
+.nav-link:active {
+    background-color: #800080; /* Dark purple on click */
+    color: #fff; /* Optional: change text color */
 }
 
 #starfield {
