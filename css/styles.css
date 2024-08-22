@@ -1,0 +1,131 @@
+/* Custom Styles */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Logo Style */
+.navbar-brand .logo {
+    height: 40px; /* Adjust size as needed */
+}
+
+#starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to go through */
+    overflow: hidden;
+    z-index: 1; /* Ensure it's above other content */
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6eb7, #7328ff, #fff4b4, #d8b4ff); /* Vibrant gradient */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Added for positioning stars */
+    overflow: hidden; /* To ensure stars don't overflow outside */
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 1.5s infinite;
+}
+
+/* Star Styles */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+
+
+.hero-section .container {
+    max-width: 700px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Transparent Button with White Frame (Hero Section) */
+.hero-section .btn-primary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: white;
+    color: #7328ff; /* Radiant pink text on hover */
+}
+
+/* Other Buttons with Transparent Background and Radiant Gradient Frame */
+.portfolio-section .btn-primary,
+.contact-section .btn-primary {
+    background-color: transparent;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(135deg, #ff6eb7, #7328ff, #fff4b4, #d8b4ff); /* Radiant gradient border */
+    color: #7328ff; /* Default to radiant pink */
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-section .btn-primary:hover,
+.contact-section .btn-primary:hover {
+    background-color: #d8b4ff; /* Radiant pink background on hover */
+    color: white;
+}
+
+
+/* About Section */
+.about-section .about-img {
+    width: 50%; /* Ensure the image takes up the full width of its container */
+    max-width: 100%; /* Prevent the image from exceeding the container's width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Optional: Add rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+
+/* Portfolio Section */
+.portfolio-section .card img {
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Contact Section */
+.contact-section .form-control {
+    border-radius: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
