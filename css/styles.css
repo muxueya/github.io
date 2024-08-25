@@ -162,10 +162,15 @@ body {
     padding: 50px 50px;
 }
 
+.portfolio-section .card {
+    height: 100%; /* Make all cards the same height */
+}
+
 .portfolio-section .card img {
-    height: 350px;
+    height: 450px;
     object-fit: cover;
 }
+
 
 /* Contact Section */
 
