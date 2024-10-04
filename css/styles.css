@@ -10,29 +10,65 @@ body {
     height: 50px; /* Adjust size as needed */
 }
 
-.navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+/* Transparent Background for Navbar */
+.navbar {
+    background-color: transparent; /* Transparent background */
+    box-shadow: none; /* Remove any box shadow */
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Make sure it's always on top */
+    transition: background-color 0.3s ease; /* Smooth transition when scrolling */
 }
 
+/* Change background on scroll (optional) */
+.navbar.scrolled {
+    background-color: rgba(119, 119, 119, 0.5); /* Optional: Add background when scrolled */
+}
+
+/* Navbar link styling */
 .nav-link {
+    color: white; /* Default text color to white */
+    position: relative;
     padding: 10px 15px;
-    text-decoration: none;
-    color: #000; /* Default text color */
-    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Smooth transition for text color change */
 }
 
-/* Hover effect */
+/* Remove any default underline */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: transparent; /* Initially no underline */
+    transition: width 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+}
+
+/* Hover state: Glow effect for underline and text color change */
 .nav-link:hover {
-    background-color: #e0b3ff; /* Light purple on hover */
+    color: #7328ff; /* Change text color on hover */
 }
 
-/* Active link effect (when clicked) */
-.nav-link:active {
-    background-color: #800080; /* Dark purple on click */
-    color: #fff; /* Optional: change text color */
+.nav-link:hover::after {
+    width: 100%; /* Full width underline */
+    background-color: white; /* White underline */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8); /* Stronger glow effect */
+}
+
+/* Active state should behave similarly */
+.nav-link.active::after {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8); /* Stronger glow effect */
+}
+
+/* Optional: Change text color on hover */
+.nav-link:hover {
+    color: #a371ff; /* Keep the text white */
 }
 
 #starfield {
