@@ -18,7 +18,15 @@ body {
     position: fixed;
     width: 100%;
     z-index: 1000; /* Make sure it's always on top */
-    transition: background-color 0.3s ease; /* Smooth transition when scrolling */
+    transition: background-color 0.6s ease-in-out; /* Smooth transition when scrolling */
+}
+
+.navbar.hidden {
+    top: -100px; /* Move the navbar off-screen */
+}
+
+.navbar.visible {
+    top: 0; /* Move it back to its original position */
 }
 
 /* Change background on scroll (optional) */
