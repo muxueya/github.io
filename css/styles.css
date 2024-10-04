@@ -147,6 +147,16 @@ body {
     color: #7328ff; /* Radiant pink text on hover */
 }
 
+/* Button when clicked (override blue outline) */
+.hero-section .btn-primary.clicked,
+.hero-section .btn-primary:focus,
+.hero-section .btn-primary:active {
+    border-color: #7328ff !important; /* Ensure the border turns purplish-pink */
+    color: #7328ff !important; /* Ensure text also turns purplish-pink */
+    outline: none; /* Remove the default focus outline */
+    box-shadow: none; /* Remove focus box-shadow (browser default) */
+}
+
 .card-img-frame {
     overflow: hidden; /* Hide overflow */
     position: relative; /* Position context for absolute children */
