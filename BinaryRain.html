@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D Binary Rain with Gradient Background</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: rgba(136, 97, 181, 0.48);
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="binaryRain"></canvas>
+
+    <script>
+        const canvas = document.getElementById('binaryRain');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        // Gradient background (purple top → orange bottom)
+        // function drawBackground() {
+        //     const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        //     gradient.addColorStop(0, "#b98cd9ff"); // Top: Purple
+        //     gradient.addColorStop(1, "#e6b789ff"); // Bottom: Orange
+        //     ctx.fillStyle = gradient;
+        //     ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // }
+
+        // Binary rain settings
+        const binaryChars = '01';
+        const numDrops = 200; // total drops (more = denser rain)
+
+        // Each drop: position, speed, size, transparency
+        const drops = [];
+        for (let i = 0; i < numDrops; i++) {
+            drops.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                fontSize: 10 + Math.random() * 25,   // random size → depth
+                alpha: 0.3 + Math.random() * 0.7,   // transparency
+                speed: 1 + Math.random() * 3        // fall speed
+            });
+        }
+
+        function draw() {
+            // Semi-transparent overlay for trailing effect
+            ctx.fillStyle = "rgba(28, 6, 52, 1)"; // your blue
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            drops.forEach(drop => {
+                const text = binaryChars.charAt(Math.floor(Math.random() * binaryChars.length));
+
+                // Glow effect for closer drops (bigger size)
+                ctx.shadowColor = "rgba(251, 250, 238, 0.92)";
+                ctx.shadowBlur = drop.fontSize > 20 ? 12 : 5;
+
+                ctx.font = drop.fontSize + "px monospace";
+                ctx.fillStyle = `rgba(251, 251, 251, ${drop.alpha})`; // pure blue look
+                ctx.fillText(text, drop.x, drop.y);
+
+                // Update position (falling diagonal for more depth illusion)
+                drop.x += 0.3 * drop.speed;
+                drop.y += drop.speed * drop.fontSize / 20;
+
+                // Reset if off screen
+                if (drop.y > canvas.height || drop.x > canvas.width) {
+                    drop.x = Math.random() * canvas.width * 0.3;
+                    drop.y = 0;
+                    drop.fontSize = 10 + Math.random() * 25;
+                    drop.alpha = 0.3 + Math.random() * 0.7;
+                    drop.speed = 1 + Math.random() * 3;
+                }
+            });
+        }
+
+        // Run animation
+        setInterval(draw, 40); // lower = faster
+    </script>
+</body>
+
+</html>

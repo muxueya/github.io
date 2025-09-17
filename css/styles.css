@@ -74,9 +74,18 @@ body {
     box-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.8); /* Stronger glow effect */
 }
 
-/* Optional: Change text color on hover */
+Optional: Change text color on hover
 .nav-link:hover {
-    color: #a371ff; /* Keep the text white */
+    color: #7328ff; /* Keep the text white */
+}
+#binaryRain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* background layer behind content but above gradient */
 }
 
 #starfield {
@@ -93,8 +102,8 @@ body {
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background: linear-gradient(135deg, #ff6eb7, #7328ff, #fff4b4, #d8b4ff); /* Vibrant gradient */
-    color: white;
+    /* background: linear-gradient(135deg, #ff6eb7, #7328ff, #fff4b4, #d8b4ff); Vibrant gradient */
+    color: rgb(216, 209, 220);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,6 +138,7 @@ body {
 
 .hero-section p {
     font-size: 1.25rem;
+    color: rgb(216, 209, 220);
     margin-bottom: 2rem;
 }
 
@@ -144,7 +154,7 @@ body {
 
 .hero-section .btn-primary:hover {
     background-color: white;
-    color: #7328ff; /* Radiant pink text on hover */
+    color: rgba(26, 5, 47, 1); /* Radiant pink text on hover */
 }
 
 /* Button when clicked (override blue outline) */
@@ -201,6 +211,10 @@ body {
 
 
 /* About Section */
+.about-section {
+    color: rgb(216, 209, 220);
+}
+
 .about-section .about-img {
     width: 50%; /* Ensure the image takes up the full width of its container */
     max-width: 100%; /* Prevent the image from exceeding the container's width */
@@ -232,13 +246,17 @@ body {
     padding: 100px 50px;
 }
 
+#contact h2 {
+    color: rgb(216, 209, 220);
+}
+
 .contact-section .form-control {
     border-radius: 0;
 }
 
 .contact-card {
-    background: linear-gradient(135deg, #ffadd6, #b48bff, #fff9d4, #ead7ff);
-    border-radius: 50px;
+    background: linear-gradient(135deg, #ffadd6, #b48bff, #84ceffff, #fff9d4);
+    border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 100px;
     color: white;
@@ -255,8 +273,8 @@ body {
     bottom: 0;
     background: inherit;
     z-index: -1;
-    filter: blur(15px);
-    margin: -20px;
+    filter: blur(50px);
+    margin: -10px;
 }
 
 .contact-input {
@@ -270,9 +288,9 @@ body {
 }
 
 .contact-input:focus {
-    border-color: #ff6eb7;
+    border-color: #7328ff;
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(255, 0, 127, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(157, 0, 255, 0.31);
 }
 
 .contact-btn {
@@ -288,8 +306,8 @@ body {
 
 .contact-btn:hover {
     background-color: white;
-    color: #ff6eb7;
-    border-color: #ff6eb7;
+    color: #7328ff;
+    border-color: #7328ff;
 }
 
 
