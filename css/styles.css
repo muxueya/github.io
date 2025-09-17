@@ -213,7 +213,10 @@ Optional: Change text color on hover
 /* About Section */
 .about-section {
     color: rgb(216, 209, 220);
+    background: rgba(0, 0, 0, 0.5);
 }
+
+
 
 .about-section .about-img {
     width: 50%; /* Ensure the image takes up the full width of its container */
@@ -230,12 +233,17 @@ Optional: Change text color on hover
     padding: 50px 50px;
 }
 
+.portfolio-section .row {
+    row-gap: 30px;
+    /* adds vertical spacing between rows */
+}
 .portfolio-section .card {
     height: 100%; /* Make all cards the same height */
 }
 
+
 .portfolio-section .card img {
-    height: 450px;
+    height: 400px;
     object-fit: cover;
 }
 
