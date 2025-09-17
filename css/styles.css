@@ -214,8 +214,17 @@ Optional: Change text color on hover
 .about-section {
     color: rgb(216, 209, 220);
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    /* <-- frosted glass blur */
+    -webkit-backdrop-filter: blur(8px);
+    /* Safari support */
+    padding: 20px;
+    /* give breathing room */
+    position: relative;
+    /* create stacking context */
+    z-index: 1;
+    /* make sure it stays above the canvas */
 }
-
 
 
 .about-section .about-img {
@@ -231,6 +240,10 @@ Optional: Change text color on hover
 .portfolio-section {
     min-height: 70vh; /* The section will be at least 70% of the viewport height */
     padding: 50px 50px;
+}
+
+#portfolio h2 {
+    color: rgb(216, 209, 220);
 }
 
 .portfolio-section .row {
