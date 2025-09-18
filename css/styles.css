@@ -196,24 +196,44 @@ a.linkedin-logo {
 }
 /* Other Buttons with Transparent Background and Radiant Gradient Frame */
 .portfolio-section .btn-primary,
+/* Style 1: Radiant Gradient button */
 .contact-section .btn-primary {
-    background-color: transparent;
-    border: 2px solid;
-    border-image-slice: 1;
-    border-width: 2px;
-    border-image-source: linear-gradient(135deg, #ff6eb7, #7328ff, #fff4b4, #d8b4ff); /* Radiant gradient border */
-    color: #7328ff; /* Default to radiant pink */
-    padding: 10px 20px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(135deg, #bd779ae7,
+        #4a3179d4,
+        #325d79df,
+        #c8bf87e7);
+    color: #fff;
+    border: none;
+    /* border-radius: 30px; */
+    padding: 12px 26px;
+    font-weight: 300;
+    text-transform: uppercase;
+    background-size: 300% 300%;
+    animation: gradient-move 6s ease infinite;
+    transition: transform 0.2s ease;
 }
 
 .portfolio-section .btn-primary:hover,
 .contact-section .btn-primary:hover {
-    background-color: #d8b4ff; /* Radiant pink background on hover */
-    color: white;
+    filter: brightness(1.2);
+        /* darkens background */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.9),
+        0 0 10px rgba(255, 255, 255, 0.7);
 }
 
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 /* About Section */
 .about-section {
@@ -281,13 +301,35 @@ a.linkedin-logo {
 }
 
 .contact-card {
-    background: linear-gradient(135deg, #ffadd6, #b48bff, #84ceffff, #fff9d4);
+    /* Semi-transparent gradient with alpha channel */
+    background: linear-gradient(135deg,
+            rgba(255, 173, 214, 0.3),
+            /* pink */
+            rgba(180, 139, 255, 0.3),
+            /* purple */
+            rgba(132, 206, 255, 0.3),
+            /* blue */
+            rgba(255, 249, 212, 0.3)
+            /* yellow */
+        );
+
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 100px;
     color: white;
     position: relative;
     z-index: 1;
+
+    /* Frosted glass effect */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* Safari */
+
+    /* Glow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* purple glow */
+
+    /* Optional border for glass edges */
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .contact-card:before {
