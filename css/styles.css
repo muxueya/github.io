@@ -180,6 +180,11 @@ Optional: Change text color on hover
     transform: scale(1.2); /* Zoom in by 20% */
 }
 
+a.linkedin-logo {
+    text-decoration: none;
+    /* remove underline */
+}
+
 .linkedin-logo img {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
