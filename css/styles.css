@@ -281,7 +281,8 @@ a.linkedin-logo {
     animation: rotate-ring 6s linear infinite;
     filter: blur(30px);
     /* softer glow around arc */
-    z-index: 1;
+    z-index: -1;
+    opacity: 0.8;
 }
 
 @keyframes rotate-ring {
@@ -300,8 +301,8 @@ a.linkedin-logo {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    overflow: hidden;
-    background: #111;
+    overflow: visible;
+    background: #ffffffff;
     /* fallback background */
     z-index: 2;
 }
@@ -339,7 +340,7 @@ a.linkedin-logo {
 
 .profile-frame:hover .back {
     opacity: 1;
-    filter: drop-shadow(0 0 10px #00f0ff) drop-shadow(0 0 25px #7328ff);
+    filter: drop-shadow(0 0 10px #cefdffff) drop-shadow(0 0 25px #bdb499ff);
 }
 
 /* Optional glowing binary aura */
