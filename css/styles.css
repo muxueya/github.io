@@ -252,12 +252,115 @@ a.linkedin-logo {
 }
 
 
-.about-section .about-img {
-    width: 50%; /* Ensure the image takes up the full width of its container */
-    max-width: 100%; /* Prevent the image from exceeding the container's width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 15px; /* Optional: Add rounded corners for a softer look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+.about-section /* Profile Frame wrapper */
+.profile-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Outer neon ring */
+.profile-ring {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border-radius: 50%;
+    padding: 1px;
+    /* thickness of the ring */
+    background: conic-gradient(from 0deg,
+            #d8b4ff 0deg,
+            #7328ff 180deg,
+            transparent 300deg,
+            transparent 360deg);
+    animation: rotate-ring 6s linear infinite;
+    filter: blur(30px);
+    /* softer glow around arc */
+    z-index: 1;
+}
+
+@keyframes rotate-ring {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* Profile frame (clips image only) */
+.profile-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #111;
+    /* fallback background */
+    z-index: 2;
+}
+
+/* Profile pics */
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1.2s ease, filter 1.2s ease, transform 1.2s ease;
+}
+
+/* Front image (default) */
+.profile-pic.front {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Back image (hidden initially) */
+.profile-pic.back {
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Hover transitions */
+.profile-frame:hover .front {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(6px) brightness(0.6);
+}
+
+.profile-frame:hover .back {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px #00f0ff) drop-shadow(0 0 25px #7328ff);
+}
+
+/* Optional glowing binary aura */
+.profile-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-linear-gradient(to bottom,
+            rgba(0, 255, 128, 0.1) 0px,
+            rgba(0, 255, 128, 0.1) 2px,
+            transparent 2px,
+            transparent 4px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.8s ease;
+}
+
+.profile-frame:hover::after {
+    opacity: 0.3;
 }
 
 
