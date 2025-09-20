@@ -1,4 +1,10 @@
-/* Custom Styles */
+/* Add spacing under the profile picture on mobile */
+@media (max-width: 767px) {
+    .profile-frame {
+        margin-bottom: 30px;
+        /* adjust as needed */
+    }
+}
 
 /* General Styles */
 body {
